@@ -1,8 +1,8 @@
 version: "3"
 services:
-  elasticsearch-order-form:
+  elasticsearch-knock-knock:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.9.2
-    container_name: elasticsearch-order-form
+    container_name: elasticsearch-knock-knock
     environment:
       - discovery.type=single-node
       - bootstrap.memory_lock=true
@@ -13,17 +13,17 @@ services:
         hard: -1
     ports:
       - 9200:9200
-  kibana-order-form:
+  kibana-knock-knock:
     image: docker.elastic.co/kibana/kibana-oss:7.9.2
-    container_name: kibana-order-form
+    container_name: kibana-knock-knock
     environment:
-      ELASTICSEARCH_HOSTS: http://elasticsearch-order-form:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch-knock-knock:9200
     ports:
       - 5601:5601
-  loader-order-form:
+  loader-knock-knock:
     build: ./loader
     environment:
-      ELASTICSEARCH_HOSTS: http://elasticsearch-order-form:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch-knock-knock:9200
     depends_on:
-      - elasticsearch-order-form
-      - kibana-order-form
+      - elasticsearch-knock-knock
+      - kibana-knock-knock
