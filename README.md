@@ -30,4 +30,4 @@ This lab is built around using Kibana for identifying and investigating signs of
 - [MITRE - ATT&CK - Brute Force: Password Guessing](https://attack.mitre.org/techniques/T1110/001/)
 
 ### Solution
-Available [here](https://findthebad.com/knock-knock-audit//).
+Available [here](https://findthebad.com/knock-knock-audit/).
